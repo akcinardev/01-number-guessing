@@ -1,14 +1,7 @@
-﻿using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace NumberGuessing
 {
@@ -21,16 +14,16 @@ namespace NumberGuessing
 			correctNumber = CreateRandomNumber();
 		}
 
-		private bool IsUserGuessCorrect(int userGuess, int correctNumber)
-		{
-			return userGuess == correctNumber;
-		}
-
-		private int CreateRandomNumber()
+		public int CreateRandomNumber()
 		{
 			Random rnd = new Random();
 			int num = rnd.Next(0, 11);
 			return num;
+		}
+
+		public bool IsUserGuessCorrect(int userGuess, int correctNumber)
+		{
+			return userGuess == correctNumber;
 		}
 
 		private void GuessButton_Clicked(object sender, RoutedEventArgs e)
@@ -84,6 +77,11 @@ namespace NumberGuessing
 		}
 
 		private void RetryButton_Clicked(object sender, RoutedEventArgs e)
+		{
+			ResetProgram();
+		}
+
+		private void ResetProgram()
 		{
 			guessedNumTbox.Clear();
 			guessButton.IsEnabled = true;
