@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberGuessing"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Number Guessing" Height="400" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
-
+        <Label Content="Number Guessing" HorizontalAlignment="Center" FontSize="40" Margin="0 20 0 0"/>
+        <Button x:Name="startButton" Click="StartButton_Clicked" Content="START" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="100" Background="Aqua"/>
+        <StackPanel Name="guessingStackPanel" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Make a Guess (0-10)" FontSize="25"/>
+            <TextBox x:Name="guessedNumTbox" HorizontalContentAlignment="Center" FontSize="25" PreviewTextInput="NumberValidationTbox"/>
+            <Button x:Name="guessButton" Click="GuessButton_Clicked" Content="Guess" Margin="10" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Name="retryStackPanel" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Label Name="resultLabel" FontSize="15" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
+            <Button Name="retryButton" Click="RetryButton_Clicked" Visibility="Hidden" Content="Retry" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Width="100" Background="Orange" Margin="10"/>
+        </StackPanel>
     </Grid>
 </Window>
